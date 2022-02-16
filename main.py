@@ -1,4 +1,8 @@
 from turtle import Screen
+from ball_class import Ball
+from score_class import Score
+from targets_class import Target
+from paddle_class import Paddle
 
 # ToDo: Setup Screen
 screen = Screen()
