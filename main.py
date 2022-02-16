@@ -12,9 +12,11 @@ screen.title("Breakout")
 screen.tracer()
 score = Score()
 ball = Ball()
+paddle = Paddle((0, -250))
 
 screen.listen()
-
+screen.onkeypress(paddle.left, "Left")
+screen.onkeypress(paddle.right, "Right")
 
 # ToDo: Ball class
 # Move ball

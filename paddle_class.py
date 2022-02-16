@@ -13,4 +13,12 @@ class Paddle(Turtle):
         self.shapesize(stretch_wid=1, stretch_len=7)
         self.penup()
         self.goto(position)
-        self.color("white")
+        self.color("white");
+
+    def left(self):
+        new_x = self.xcor() - MOVE_DISTANCE
+        self.goto(new_x, self.ycor())
+
+    def right(self):
+        new_x = self.xcor() + MOVE_DISTANCE
+        self.goto(new_x, self.ycor())
