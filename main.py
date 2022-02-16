@@ -3,6 +3,7 @@ from ball_class import Ball
 from score_class import Score
 from targets_class import Target
 from paddle_class import Paddle
+import time
 
 # ToDo: Setup Screen
 screen = Screen()
@@ -36,5 +37,21 @@ screen.onkeypress(paddle.right, "Right")
 # Move to position
 # When ball hits target destroy yourself
 # Add to score
+on = True
+while on:
+    screen.update()
+    time.sleep(ball.move_speed)
+    ball.move_ball()
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.vertical_wall_collision()
+
+    if ball.xcor() > 390 or ball.xcor() < -390:
+        ball.horizontal_wall_collision()
+
+    if ball.xcor() > 380:
+        ball.horizontal_wall_collision()
+
+    if ball.xcor() < -380:
+        ball.horizontal_wall_collision()
 
 screen.exitonclick()

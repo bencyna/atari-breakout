@@ -8,7 +8,7 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.move_speed = 0.05
+        self.move_speed = 0.005
         self.x_movement = 10
         self.y_movement = 10
         self.move_ball()
@@ -17,3 +17,9 @@ class Ball(Turtle):
         new_x = self.xcor() + self.x_movement
         new_y = self.ycor() + self.y_movement
         self.goto(new_x, new_y)
+
+    def horizontal_wall_collision(self):
+        self.x_movement = -self.x_movement
+
+    def vertical_wall_collision(self):
+        self.y_movement = -self.y_movement
