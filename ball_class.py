@@ -13,7 +13,7 @@ class Ball(Turtle):
         self.y_movement = 10
         self.move_ball()
 
-        def move_ball(self):
-            new_x = self.xcor() + self.x_movement
-            new_y = self.ycor() + self.y_movement
-            self.goto(new_x, new_y)
+    def move_ball(self):
+        new_x = self.xcor() + self.x_movement
+        new_y = self.ycor() + self.y_movement
+        self.goto(new_x, new_y)
