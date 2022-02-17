@@ -37,11 +37,14 @@ screen.onkeypress(paddle.right, "Right")
 # Move to position
 # When ball hits target destroy yourself
 # Add to score
+for num_y in range(-100, 200, 50):
+    for num_x in range(-300, 300, 60):
+        target = Target((num_x, num_y), 'White')
+
+
 on = True
 while on:
     screen.update()
-    time.sleep(ball.move_speed)
-    ball.move_ball()
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.vertical_wall_collision()
 
