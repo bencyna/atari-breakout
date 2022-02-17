@@ -4,6 +4,9 @@ from score_class import Score
 from targets_class import Target
 from paddle_class import Paddle
 import time
+positions_left = [
+
+]
 
 # ToDo: Setup Screen
 screen = Screen()
@@ -37,14 +40,16 @@ screen.onkeypress(paddle.right, "Right")
 # Move to position
 # When ball hits target destroy yourself
 # Add to score
-for num_y in range(-100, 200, 50):
-    for num_x in range(-300, 300, 60):
+for num_y in range(-50, 250, 50):
+    for num_x in range(-360, 360, 60):
         target = Target((num_x, num_y), 'White')
+        positions_left.append((num_x, num_y))
 
-
+print(positions_left)
 on = True
 while on:
     screen.update()
+    ball.move_ball()
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.vertical_wall_collision()
 
@@ -56,5 +61,8 @@ while on:
 
     if ball.xcor() < -380:
         ball.horizontal_wall_collision()
+
+    if -240 > ball.ycor() > -260 and paddle.xcor() - ball.xcor() < 40:
+        ball.vertical_wall_collision()
 
 screen.exitonclick()

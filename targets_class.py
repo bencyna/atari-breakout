@@ -7,6 +7,7 @@ class Target(Turtle):
         self.penup(),
         self.shape('square')
         self.shapesize(1, 2)
+        self.speed(10)
         self.goto(position),
         self.color(color)
 
