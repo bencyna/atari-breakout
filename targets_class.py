@@ -12,4 +12,4 @@ class Target(Turtle):
         self.color(color)
 
     def ball_collision(self):
-        pass
+        self.reset()

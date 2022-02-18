@@ -8,10 +8,10 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.move_speed = 0.005
+        self.speed(5)
         self.x_movement = 10
         self.y_movement = -10
-        self.goto(0, -40)
+        self.goto(0, -60)
         self.move_ball()
 
     def move_ball(self):
@@ -24,3 +24,7 @@ class Ball(Turtle):
 
     def vertical_wall_collision(self):
         self.y_movement = -self.y_movement
+
+    def reset_ball(self):
+        self.goto(0, -60)
+        time.sleep(2)
